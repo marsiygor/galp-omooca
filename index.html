@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galpão Mooca - Treinamento Funcional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#121212',
+                            orange: '#F97316', // Laranja vibrante
+                            orangeDark: '#C2410C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #121212;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .diagonal-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(249, 115, 22, 0.1) 10px,
+                rgba(249, 115, 22, 0.1) 20px
+            );
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-black text-gray-100 antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-black/95 backdrop-blur-sm border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <!-- Tentativa de carregar a logo original, fallback para texto estilizado -->
+                        <img src="image_0d5a6c.png" alt="Galpão Mooca Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                        <div id="logo-fallback" style="display: none;" class="font-heading font-bold text-3xl tracking-wider text-white">
+                            GALPÃO<span class="text-brand-orange">MOOCA</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#metodologia" class="text-gray-300 hover:text-brand-orange font-medium transition-colors text-sm uppercase tracking-wider">A Metodologia</a>
+                    <a href="#modalidades" class="text-gray-300 hover:text-brand-orange font-medium transition-colors text-sm uppercase tracking-wider">Modalidades</a>
+                    <a href="#estrutura" class="text-gray-300 hover:text-brand-orange font-medium transition-colors text-sm uppercase tracking-wider">Estrutura</a>
+                    <a href="#contato" class="bg-brand-orange hover:bg-brand-orangeDark text-white px-6 py-2.5 rounded-sm font-bold uppercase tracking-wider transition-all transform hover:scale-105">Agende uma Aula</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-white/10">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#metodologia" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-orange hover:bg-zinc-800 rounded-md">A Metodologia</a>
+                <a href="#modalidades" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-orange hover:bg-zinc-800 rounded-md">Modalidades</a>
+                <a href="#estrutura" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-orange hover:bg-zinc-800 rounded-md">Estrutura</a>
+                <a href="#contato" class="block px-3 py-2 text-base font-bold text-brand-orange hover:text-white hover:bg-brand-orange rounded-md mt-4">Agende uma Aula</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern min-h-screen flex items-center pt-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20 text-center md:text-left">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/20 border border-brand-orange/50 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                    <span class="text-brand-orange font-bold text-sm tracking-widest uppercase">Treinamento Funcional Mooca</span>
+                </div>
+                <h1 class="font-heading text-5xl md:text-7xl font-bold text-white leading-tight mb-6 uppercase">
+                    Construa um corpo <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">totalmente funcional</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto md:mx-0 font-light">
+                    O Galpão é um box de treinamento com metodologia própria para transformar sua saúde, força e mobilidade de forma inteligente.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contato" class="bg-brand-orange hover:bg-brand-orangeDark text-white px-8 py-4 rounded-sm font-bold text-lg uppercase tracking-wider transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                        <i data-lucide="calendar"></i>
+                        Agendar Aula Experimental
+                    </a>
+                    <a href="#metodologia" class="border border-white/30 hover:border-white text-white bg-white/5 hover:bg-white/10 px-8 py-4 rounded-sm font-bold text-lg uppercase tracking-wider transition-all flex items-center justify-center">
+                        Conheça o Galpão
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center opacity-70">
+            <span class="text-xs tracking-widest uppercase mb-2">Role para baixo</span>
+            <i data-lucide="chevron-down" class="text-brand-orange"></i>
+        </div>
+    </section>
+
+    <!-- Metodologia Section (Baseado na Imagem 1) -->
+    <section id="metodologia" class="py-24 bg-zinc-900 relative overflow-hidden">
+        <div class="diagonal-stripes absolute inset-0 opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="lg:w-1/2">
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 uppercase">
+                        Metodologia de <span class="text-brand-orange">Treino Própria</span>
+                    </h2>
+                    <div class="w-20 h-2 bg-brand-orange mb-8"></div>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        O Galpão é muito mais que um box. Desenvolvemos uma <strong>metodologia de treino exclusiva</strong>, pensada para extrair o seu máximo com segurança e eficiência.
+                    </p>
+                    <div class="bg-brand-black p-6 border-l-4 border-brand-orange rounded-r-lg shadow-xl mb-8">
+                        <p class="text-xl font-medium italic text-gray-100">
+                            "Nas nossas aulas usamos exercícios de modalidades como: Crossfit, Musculação, Yoga e Pilates. Para um corpo totalmente funcional e inteligente."
+                        </p>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-brand-orange shrink-0 mt-1"></i>
+                            <span class="text-gray-300">Treinos dinâmicos e adaptáveis para todos os níveis.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-brand-orange shrink-0 mt-1"></i>
+                            <span class="text-gray-300">Foco em mobilidade, força e condicionamento cardiovascular.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-brand-orange shrink-0 mt-1"></i>
+                            <span class="text-gray-300">Acompanhamento próximo por coaches especializados.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Image Collage -->
+                <div class="lg:w-1/2 w-full grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop" alt="Treino com pesos" class="rounded-lg shadow-lg w-full h-64 object-cover transform translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1000&auto=format&fit=crop" alt="Treino Funcional" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalidades Section -->
+    <section id="modalidades" class="py-24 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-4xl font-bold text-white mb-2 uppercase">A Base do <span class="text-brand-orange">Nosso Treino</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-16">Combinamos o melhor de quatro mundos para entregar a preparação física mais completa que você já experimentou.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-brand-orange/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -z-0 group-hover:bg-brand-orange/10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-lg flex items-center justify-center mb-6 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors relative z-10">
+                        <i data-lucide="activity" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3 relative z-10">Crossfit / Funcional</h3>
+                    <p class="text-gray-400 relative z-10">Movimentos de alta intensidade e levantamento de peso olímpico para ganho de potência e fôlego.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-brand-orange/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -z-0 group-hover:bg-brand-orange/10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-lg flex items-center justify-center mb-6 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors relative z-10">
+                        <i data-lucide="dumbbell" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3 relative z-10">Musculação</h3>
+                    <p class="text-gray-400 relative z-10">Trabalho de força e hipertrofia focada, garantindo estabilidade articular e resistência muscular.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-brand-orange/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -z-0 group-hover:bg-brand-orange/10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-lg flex items-center justify-center mb-6 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors relative z-10">
+                        <i data-lucide="flower-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3 relative z-10">Yoga</h3>
+                    <p class="text-gray-400 relative z-10">Respiração, consciência corporal e flexibilidade. O equilíbrio perfeito para a intensidade dos treinos.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-brand-orange/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -z-0 group-hover:bg-brand-orange/10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-lg flex items-center justify-center mb-6 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors relative z-10">
+                        <i data-lucide="scan-line" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3 relative z-10">Pilates</h3>
+                    <p class="text-gray-400 relative z-10">Fortalecimento brutal do core (centro de força), controle postural e prevenção de lesões.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrutura & Comunidade (Galeria) -->
+    <section id="estrutura" class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-orange font-bold tracking-widest uppercase text-sm">Nossa Casa</span>
+                <h2 class="font-heading text-4xl font-bold text-white mt-2 uppercase">Espaço Amplo & <span class="text-brand-orange">#TeamGalpão</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4">Um galpão de verdade. Grama sintética, piso de borracha, equipamentos de primeira e uma comunidade que te puxa para cima.</p>
+            </div>
+
+            <!-- Grid Style based on user's Instagram screenshots -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                <div class="aspect-square relative group overflow-hidden bg-brand-black">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop" alt="Espaço do Box" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold">Estrutura Completa</span>
+                    </div>
+                </div>
+                <div class="aspect-square relative group overflow-hidden bg-brand-black">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop" alt="Comunidade" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold">Turmas Animadas</span>
+                    </div>
+                </div>
+                <div class="aspect-square relative group overflow-hidden bg-brand-black">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" alt="Levantamento de Peso" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold">Foco no Resultado</span>
+                    </div>
+                </div>
+                <div class="aspect-square relative group overflow-hidden bg-brand-black">
+                    <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=800&auto=format&fit=crop" alt="Treino Funcional" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold">Equipamentos de Ponta</span>
+                    </div>
+                </div>
+                <div class="aspect-square relative group overflow-hidden bg-brand-black">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop" alt="Grama Sintética e Piso" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold">Pista de Agilidade</span>
+                    </div>
+                </div>
+                <div class="aspect-square relative group overflow-hidden bg-brand-black flex items-center justify-center bg-zinc-800">
+                    <div class="text-center p-6">
+                        <i data-lucide="instagram" class="w-12 h-12 text-brand-orange mx-auto mb-3"></i>
+                        <h3 class="text-white font-bold text-xl mb-2">Faça parte do #TeamGalpao</h3>
+                        <a href="https://instagram.com/galpaomooca" target="_blank" class="text-sm text-brand-orange hover:text-white transition-colors underline">Siga no Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contato" class="py-24 bg-brand-orange relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')] mix-blend-overlay opacity-20 bg-cover bg-center"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="font-heading text-5xl font-bold text-white mb-6 uppercase shadow-sm">Pronto para a transformação?</h2>
+            <p class="text-xl text-white/90 mb-10 font-medium">Agende sua aula experimental gratuita e venha conhecer a metodologia Galpão Mooca.</p>
+            
+            <div class="bg-brand-black p-8 md:p-12 rounded-2xl shadow-2xl text-left max-w-2xl mx-auto transform hover:-translate-y-1 transition-transform">
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Em um ambiente real, isto redirecionaria para o WhatsApp!');">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Nome Completo</label>
+                        <input type="text" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="Seu nome">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">WhatsApp</label>
+                        <input type="tel" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="(11) 90000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Qual seu objetivo?</label>
+                        <select class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors appearance-none">
+                            <option>Emagrecimento</option>
+                            <option>Ganho de Massa / Força</option>
+                            <option>Condicionamento Físico</option>
+                            <option>Saúde e Qualidade de Vida</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 text-lg uppercase tracking-wider transition-colors mt-4">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        Agendar via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="font-heading font-bold text-3xl tracking-wider text-white mb-4">
+                        GALPÃO<span class="text-brand-orange">MOOCA</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Metodologia de treino própria combinando Crossfit, Musculação, Yoga e Pilates para um corpo inteligente.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-orange transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-orange transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#metodologia" class="text-gray-400 hover:text-brand-orange transition-colors">A Metodologia</a></li>
+                        <li><a href="#modalidades" class="text-gray-400 hover:text-brand-orange transition-colors">Modalidades</a></li>
+                        <li><a href="#estrutura" class="text-gray-400 hover:text-brand-orange transition-colors">O Espaço</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-brand-orange transition-colors">Agendar Aula</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Onde Estamos</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-brand-orange shrink-0 mt-1"></i>
+                            <span class="text-gray-400">Mooca, São Paulo - SP<br><span class="text-sm">(Bairro Tradicional)</span></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="text-brand-orange shrink-0"></i>
+                            <span class="text-gray-400">(11) 99999-9999</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="text-brand-orange shrink-0"></i>
+                            <span class="text-gray-400">Seg - Sex: 06h às 22h<br>Sáb: 08h às 13h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 Galpão Mooca. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Feito para o #TeamGalpao</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
